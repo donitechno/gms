@@ -1,0 +1,341 @@
+@font-face{
+	font-family:'SamsungOne';
+	src:url(../fonts/SamsungOne-400.eot);
+	src:url(../fonts/SamsungOne-400.eot?#iefix) format("embedded-opentype"),
+		url(../fonts/SamsungOne-400.woff2) format("woff2"),
+		url(../fonts/SamsungOne-400.woff) format("woff"),
+		url(../fonts/SamsungOne-400.ttf) format("truetype");
+}
+
+@media print{    
+    .no-print{
+        display: none !important;
+    }
+	
+	.utama{
+		margin:0px !important;
+		padding:0px !important;
+	}
+	
+	.full-print{
+		width:100% !important;
+	}
+}
+
+body{
+	font-family:"SamsungOne" !important;
+}
+
+.ui.modal>.close:after{
+	content:"X";
+	font-weight:bold;
+	font-family:"SamsungOne" !important;
+	color:#000 !important;
+}
+
+.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url]{
+	font-family:"SamsungOne" !important;
+}
+
+button, input, optgroup, select, textarea, .ui-widget, .ui.menu, .ui.accordion .title:not(.ui), .ui.modal>.header, .ui.button{
+	font-family:"SamsungOne" !important;
+}
+
+.pusher{
+	padding-top:43px;
+	margin-left: 260px;
+}
+
+#menuContent .ui.attached.segment{
+	border:none !important;
+}
+
+.ui.tabular.menu .active.item, .ui.tabular.menu .item{
+	width:20%;
+}
+
+.title-menu{
+	color:#FFF !important;
+	font-size:14px !important;
+	padding-top:.5em !important;
+	padding-bottom:.5em !important;
+}
+
+.single-title{
+	float: left !important;
+    margin: 0 .5em 0 0 !important;
+}
+
+.ui.accordion.menu .item .active.title>.chevron.down.icon {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.ui.accordion.menu .item .title>.chevron.down.icon {
+    float: right;
+    margin: .21425em 0 0 1em;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.item-sub{
+	padding-left:1.7em !important;
+}
+/*----------*/
+
+.left-menu{
+  padding-top:0.5em;
+  width:260px !important;
+}
+
+.btn-head{
+	border-radius:0 !important;
+	margin-right:0 !important;
+}
+
+.dataTables_filter input{
+    margin: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255,255,255,0);
+    line-height: 1.21428571em;
+    padding: .67857143em 1em;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    border-radius: .28571429rem;
+    -webkit-box-shadow: 0 0 0 0 transparent inset;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+	margin-left:5px;
+}
+
+#filter_data_tabel th, #pos_data_tabel th, #pos_data_tabel_modal th{
+	font-size: 0.9em !important;
+	text-align:center;
+}
+
+#filter_data_tabel td{
+	font-size: 1em !important;
+    padding: 0.3em 0.78571429em;
+}
+
+.ui.pagination.menu, .dataTables_info, .dataTables_filter, .dataTables_length{
+	font-size: 0.9em !important;
+}
+
+.ui.modal > .close{
+	top: 0.7rem !important;
+    right: 1rem !important;
+	/*color:#000 !important;*/
+}
+
+.selectize-control.single .selectize-input, .selectize-dropdown.single{
+	background:#FFF !important;
+	font-size:1em !important;
+}
+
+.ui.secondary.pointing.menu{
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	font-size:15px;
+}
+
+.ui.secondary.pointing.menu .active.item{
+	border-color:#c0392b !important;
+	color:#FFF !important;
+	background:#e74c3c !important
+}
+
+.ui.form .field>label{
+	font-size: 0.9em !important;
+    font-weight: 600 !important;
+}
+
+.form-pos{
+	padding:8px !important;
+	border:0px !important;
+	font-size:1em !important;
+	width:100%;
+}
+
+.form-pos:focus, .form-pos:active{
+	border:2px solid #b8b0ff !important;
+}
+
+.select-form{
+	padding:0px !important;
+}
+
+.ket-bawah{
+	font-size:20px;
+	font-weight:400;
+	letter-spacing:-0.5px;
+}
+
+#pos_data_tabel td, #pos_data_tabel_modal td{
+	padding:0px;
+}
+
+.bg-div{
+	padding: 15px !important;
+	background-image: url(../images/bg_form.png);
+	background-repeat: repeat;
+	background-size: 96px 96px;
+	box-shadow: 0px 1px 3px #7f8c8d !important;
+}
+
+.pos{
+	background:none !important;
+	border: 1px solid rgba(34,36,38,0) !important;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,0) !important;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,0) !important;
+}
+
+.ui.card>.content>.header, .ui.cards>.card>.content>.header, h1, h2, h3, h4, h5, .ui.steps .step .title, .ui.header, .ui.message .header{
+	font-family:"SamsungOne" !important;
+}
+
+.selectize-dropdown-content .active{
+	background:rgba(231, 76, 60, 0.4) !important;
+}
+
+@keyframes loading{
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+
+.menunggu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: waiting 1s ease-in-out infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+@keyframes waiting {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.ui.tabular.menu .item{
+	background:#ecf0f1 !important;
+}
+
+.ui.tabular.menu .active.item{
+	background: none #fff !important;
+}
+
+.ui.tabular.menu .item{
+	padding:.2em 0.3em .2em 0.9em !important;
+}
+
+.close-tab{
+	padding: 5px 0px;
+    color: #34495e;
+    border-radius: 100%;
+}
+
+.close-tab:hover{
+	background:#bdc3c7;
+}
+
+.td-head-cust{
+	text-align: center !important;
+	font-weight:600;
+    border-top: 1px solid #bdc3c7 !important;
+    border-bottom: 1px solid #bdc3c7;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 5px 5px 5px 5px !important;
+}
+
+.table-input td{
+	padding:0px !important;
+}
+
+.table-input td .selectize-input{
+	border:0px;
+	-webkit-box-shadow:0 0px 0 rgba(0,0,0,0), inset 0 0px 0 rgba(255,255,255,0) !important;
+	box-shadow:0 0px 0 rgba(0,0,0,0), inset 0 0px 0 rgba(255,255,255,0) !important;
+}
+
+.table-modal td{
+	font-size: 0.9em;
+    padding: 0.1em 0.78571429em;
+}
+
+.pilih {
+    padding: .4em 1em !important;
+}
+
+.header-lap{
+	text-align:center !important;
+}
+
+.table-pjg{
+	border: none !important;
+}
+
+.table-pjg th{
+	padding: 0.3em 0.78571429em;
+    text-align: center !important;
+    border: none !important;
+    border-top: 1px solid #000 !important;
+    border-bottom: 1px solid #000 !important;
+    background: #FFF !important;
+}
+
+.table-pjg td{
+    font-size: 1em;
+    padding: 0.2em 0.78571429em;
+	border:none;
+}
+
+.td-total{
+	font-weight: 600;
+    border-top: double #34495e !important;
+	border-bottom: 1px solid #000 !important;
+}
+
+.kosong-bg {
+    background: #f9fafb;
+}
+
+.form-taksir{
+	background:#f5f6fa !important;
+}

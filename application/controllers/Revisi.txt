@@ -1,0 +1,111 @@
+M_Mutasi
+
+
+
+public function get_product_all($filter_category,$filter_box,$filter_karat){
+	$sql = "SELECT p.*, k.karat_name, c.category_name, b.nama_box
+			FROM gold_product p, gold_karat k, gold_product_category c, gold_box b
+			WHERE p.id_karat = k.id AND p.id_category = c.id AND p.id_box = b.id AND p.id_category IN ($filter_category) AND p.id_box IN ($filter_box) AND p.id_karat IN ($filter_karat)
+			ORDER BY p.in_date, p.created_date";
+
+	$query = $this->db->query($sql)->result();
+	return $query;
+}
+
+public function get_product_filter($filter_category,$filter_box,$filter_karat,$filter_status){
+	$sql = "SELECT p.*, k.karat_name, c.category_name, b.nama_box
+			FROM gold_product p, gold_karat k, gold_product_category c, gold_box b
+			WHERE p.id_karat = k.id AND p.id_category = c.id AND p.id_box = b.id AND p.id_category IN ($filter_category) AND p.id_box IN ($filter_box) AND p.id_karat IN ($filter_karat) AND p.status = '$filter_status'
+			ORDER BY p.in_date, p.created_date";
+	
+	$query = $this->db->query($sql)->result();
+	return $query;
+}
+
+public function get_so_reason($id){
+	$sql = "SELECT so_reason
+			FROM gold_stock_out
+			WHERE id_product = '$id'";
+
+	$query = $this->db->query($sql)->result();
+	return $query;
+}
+
+
+
+
+
+goldTransaksi
+
+
+
+function filterTransaksi(idMenu){
+	exeTrans = true;
+	document.getElementById(idMenu+"-btnfilter").className += " loading";
+	
+	if(idMenu == 'lapTahunan'){
+		var dateReport = $("#"+idMenu+"-date").val();
+		
+		var alamat = base_url+'/index.php/'+idMenu+'/pdf/'+dateReport;
+		window.open(alamat,"_blank");
+		
+		document.getElementById(idMenu+"-btnfilter").classList.remove("loading");
+		exeTrans = false;
+	}else{
+		$.ajax({
+			url: $('#'+idMenu+'-form-filter').attr('action'),
+			type: 'post',
+			data: $('#'+idMenu+'-form-filter').serialize(),
+			dataType: 'json',
+			success: function(response){
+				if(response.success == true){
+					document.getElementById(idMenu+"-wrap_filter").innerHTML = response.view;
+					
+					if(idMenu != "titipanRp" && idMenu != "titipanGram"){
+						$(document).ready(function() {
+							$('#'+idMenu+'-tablefilter').DataTable({
+								"bLengthChange": false
+							});
+						} );
+					}
+					
+					if(idMenu == 'bestCS'){
+						$('#bestCS-filtertabel').DataTable({
+							"order": [[ 3, "desc" ]]
+						});
+					}else if(idMenu == 'dataProduct'){
+						$('#dataProduct-filtertabel').DataTable({
+							"pageLength": 50
+						});
+					}
+					
+					if(idMenu == 'titipanRp' || idMenu == 'titipanGram'){
+						for (var i = 1; i <= response.number; i++){
+							$('.kobi'+i+' .browse')
+							.popup({
+								inline     : true,
+								hoverable  : true,
+								position   : 'right center',
+								delay: {
+									show: 200,
+									hide: 200
+								}
+							})
+							;
+						}
+					}
+					
+					document.getElementById(idMenu+"-btnfilter").classList.remove("loading");
+					exeTrans = false;
+				}else{
+					alert('Gagal Filter Data!');
+					document.getElementById(idMenu+"-btnfilter").classList.remove("loading");
+					exeTrans = false;
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown){
+				alert('Error get data from ajax');
+			}
+		})
+	}
+}
